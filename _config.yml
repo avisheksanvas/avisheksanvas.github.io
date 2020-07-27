@@ -30,9 +30,32 @@ twitter_username: jekyllrb
 github_username:  jekyll
 
 # Build settings
-theme: jekyll-theme-cayman
+# theme: jekyll-theme-cayman
+remote_theme: samarsault/plainwhite-jekyll
 plugins:
   - jekyll-feed
+
+plainwhite:
+  name: Avishek Santhaliya
+  tagline: Developer. Traveller.
+  date_format: "%b %-d, %Y"	
+  portfolio_image:  "assets/portfolio.png"
+  dark_mode: true
+  search: true
+  navigation:
+    - title: About Me
+      url: "/about"
+    - title: Writings 
+      url: "/blog"
+    - title: Travel
+      url: "/travel"
+  social_links:
+    twitter: avisheksanvas
+    github: avisheksanvas
+    linkedIn: in/avishek-santhaliya
+    instagram: avisheksanthaliya
+
+show_excerpts: true
 
 # Exclude from processing.
 # The following items will not be processed, by default.

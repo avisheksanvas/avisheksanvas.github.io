@@ -1,0 +1,52 @@
+---
+layout: default
+---
+
+<ul class="posts">
+  <!-- EDUCATION -->
+  <li class="posts-labelgroup" id="posts-labelgroup">
+    <h1 id="posts-label">Education</h1>
+  </li>
+
+  <li>
+    {%- assign date_format = site.plainwhite.date_format | default: "%b %-d, %Y" -%}
+    <h2 class="post-title">Goethals Memorial School</h2>
+    <div class="post-meta">
+      <div class="post-date">
+        <i class="icon-calendar"></i>
+        {{ '2013-03-20' | date: date_format }}
+      </div>
+    </div>
+    <div class="post">
+	Primarty school till class 10. Was ICSE board, scored 93.3%.
+	</div>
+  </li>
+
+  <li>
+    {%- assign date_format = site.plainwhite.date_format | default: "%b %-d, %Y" -%}
+    <h2 class="post-title">DPS Mathura Road, New Delhi</h2>
+    <div class="post-meta">
+      <div class="post-date">
+        <i class="icon-calendar"></i>
+        {{ '2015-02-20' | date: date_format }}
+      </div>
+    </div>
+    <div class="post">
+	Secondary school till class 12. Was CBSE board, scored 95.6%.
+	</div>
+  </li>
+
+  <li>
+    {%- assign date_format = site.plainwhite.date_format | default: "%b %-d, %Y" -%}
+    <h2 class="post-title">MNNIT, Allahabad</h2>
+    <div class="post-meta">
+      <div class="post-date">
+        <i class="icon-calendar"></i>
+        {{ '2019-05-16' | date: date_format }}
+      </div>
+    </div>
+    <div class="post">
+	Undergrad in Computer Science. CGPA - 8.4
+	</div>
+  </li>
+</ul>
