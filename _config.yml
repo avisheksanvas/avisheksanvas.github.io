@@ -45,6 +45,8 @@ plainwhite:
   navigation:
     - title: About Me
       url: "/about"
+    - title: Projects
+      uel: "/projects"
     - title: Writings 
       url: "/blog"
     - title: Travel
