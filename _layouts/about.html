@@ -3,50 +3,36 @@ layout: default
 ---
 
 <ul class="posts">
-  <!-- EDUCATION -->
+  <!-- Education -->
   <li class="posts-labelgroup" id="posts-labelgroup">
     <h1 id="posts-label">Education</h1>
   </li>
 
-  <li>
-    {%- assign date_format = site.plainwhite.date_format | default: "%b %-d, %Y" -%}
-    <h2 class="post-title">MNNIT, Allahabad</h2>
-    <div class="post-meta">
-      <div class="post-date">
-        <i class="icon-calendar"></i>
-        {{ '2019-05-16' | date: date_format }}
-      </div>
+  <li class="workex">
+    <img class="workeximg" src="{{ "/assets/mnnit.png" | relative_url }}" alt="MNNIT">
+    <div class="workexinfo">
+	  <h2>MNNIT Allahabad</h2>
+      <h1>May 2015 - May 2019</h1>
+      <p>Bachelor of Technology in Computer Science</p>
     </div>
-    <div class="post">
-	Bachelor of Technology in Computer Science - 8.4 CPI.
-	</div>
   </li>
-  <li>
-    {%- assign date_format = site.plainwhite.date_format | default: "%b %-d, %Y" -%}
-    <h2 class="post-title">DPS Mathura Road, New Delhi</h2>
-    <div class="post-meta">
-      <div class="post-date">
-        <i class="icon-calendar"></i>
-        {{ '2015-02-20' | date: date_format }}
-      </div>
+  <li class="workex">
+    <img class="workeximg" src="{{ "/assets/dps.jpeg" | relative_url }}" alt="DPS">
+    <div class="workexinfo">
+	  <h2>Delhi Public School, Mathura Road</h2>
+      <h1>April 2013 - April 2015</h1>
+      <p>CBSE - 95.6%</p>
     </div>
-    <div class="post">
-	CBSE - 95.6%.
-	</div>
   </li>
-  <li>
-    {%- assign date_format = site.plainwhite.date_format | default: "%b %-d, %Y" -%}
-    <h2 class="post-title">Goethals Memorial School, Kurseong</h2>
-    <div class="post-meta">
-      <div class="post-date">
-        <i class="icon-calendar"></i>
-        {{ '2013-03-20' | date: date_format }}
-      </div>
+  <li class="workex">
+    <img class="workeximg" src="{{ "/assets/gms.jpg" | relative_url }}" alt="GMS">
+    <div class="workexinfo">
+	  <h2>Goethals Memorial School, Kurseong</h2>
+      <h1>March 2005 - March 2013</h1>
+      <p>ICSE - 93.34%</p>
     </div>
-    <div class="post">
-	ICSE - 93.3%.
-	</div>
   </li>
+</ul>
 
 </ul>
 <ul class="posts">
@@ -55,9 +41,25 @@ layout: default
     <h1 id="posts-label">Experience</h1>
   </li>
 
-  <li> <h2 class="achyear">July 2019 - Present</h2> <h2 class="achievement">Arista Networks, Bangalore, India</h2> </li>
+  <li class="workex">
+    <img class="workeximg" src="{{ "/assets/arista.jpg" | relative_url }}" alt="Arista Networks">
+    <div class="workexinfo">
+	  <h2>Arista Networks, Bangalore, India</h2>
+      <h1>July 2019 - Present</h1>
+      <p>Been working as a Software Engineer</p>
+    </div>
+  </li>
+  <li class="workex">
+    <img class="workeximg" src="{{ "/assets/arista.jpg" | relative_url }}" alt="Arista Networks">
+    <div class="workexinfo">
+	  <h2>Arista Networks, Bangalore, India</h2>
+      <h1>May 2018 - July 2018</h1>
+      <p>Software D Engineer Intern</p>
+    </div>
+  </li>
 
 </ul>
+
 <ul class="posts">
   <!-- Achievements -->
   <li class="posts-labelgroup" id="posts-labelgroup">
@@ -73,5 +75,4 @@ layout: default
   <li> <h2 class="achyear">September 2016</h2> <h2 class="achievement">Second Runner Up - Software Dev Event @Avishkar ( Tech Fest )</h2></li>
   <li> <h2 class="achyear">September 2015</h2> <h2 class="achievement">Winner - Inter college Volleyball @JLal</h2> </li>
   <li> <h2 class="achyear">December 2013</h2> <h2 class="achievement">Second Runner Up - Programming Context @Hash ( Tech Fest )</h2></li>
-
 </ul>

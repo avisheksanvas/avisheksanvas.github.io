@@ -46,7 +46,7 @@ plainwhite:
     - title: About Me
       url: "/about"
     - title: Projects
-      uel: "/projects"
+      url: "/projects"
     - title: Writings 
       url: "/blog"
     - title: Travel

@@ -288,3 +288,38 @@ table {
   font-size: 15px;
   font-style: italic;
 }
+.workex {
+  display: flex;
+  @media screen and (max-width: $mobileW) {
+    .workexinfo {
+      width: 100%;
+    }
+    .workeximg {
+      width: 100%;
+    }
+  }
+}
+.workexinfo {
+  h2 {
+    font-family: 'Merriweather';
+    text-decoration: none;
+    font-size: 18px;
+    color: #b3b3cc;
+  }
+  h1 {
+    font-family: 'Merriweather';
+    text-decoration: none;
+    font-size: 15px;
+    font-style: italic;
+  }
+  p {
+    font-family: 'Merriweather';
+    text-decoration: none;
+    font-size: 15px;
+  }
+}
+.workeximg {
+  width:250px;height:150px;
+  padding: 10px 10px 10px 10px;
+  object-fit: contain;
+}
