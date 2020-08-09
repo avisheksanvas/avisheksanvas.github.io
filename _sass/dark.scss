@@ -97,6 +97,18 @@
 	.achievement {
 		color: #ccf2ff;
 	}
+	.intro {
+        h1 {
+		    color: white;
+		}
+		p {
+			color: white;
+		}
+		a {
+			color: $dark_link_color;
+			background-color: rgba( 224, 224, 224, 0.4 );
+		}
+	}
 }
 .dark table {
 	th, td {
