@@ -281,12 +281,14 @@ table {
   text-decoration: none;
   font-size: 18px;
   color: #b3b3cc;
+  letter-spacing: 1px;
 }
 .achyear {
   font-family: 'Merriweather';
   text-decoration: none;
   font-size: 15px;
   font-style: italic;
+  letter-spacing: 1px;
 }
 .workex {
   display: flex;
@@ -296,6 +298,7 @@ table {
   }
 }
 .workexinfo {
+  letter-spacing: 0.8px;
   h2 {
     font-family: 'Merriweather';
     text-decoration: none;
@@ -320,7 +323,7 @@ table {
   object-fit: cover;
 }
 .schoolimg {
-  width:250px;height:150px;
+  width:225px;height:150px;
   padding: 10px 10px 10px 10px;
   object-fit: contain;
 }
