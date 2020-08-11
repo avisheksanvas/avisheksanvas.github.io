@@ -280,8 +280,11 @@ table {
   font-family: 'Merriweather';
   text-decoration: none;
   font-size: 18px;
-  color: #b3b3cc;
+  a {
+    background-color: rgba( 205, 255, 241, 0.7 );
+  }
   letter-spacing: 1px;
+  line-height: 20px;
 }
 .achyear {
   font-family: 'Merriweather';
@@ -299,6 +302,7 @@ table {
 }
 .workexinfo {
   letter-spacing: 0.8px;
+  line-height: 20px;
   h2 {
     font-family: 'Merriweather';
     text-decoration: none;
@@ -315,6 +319,10 @@ table {
     font-family: 'Merriweather';
     text-decoration: none;
     font-size: 15px;
+  }
+  a {
+    text-decoration: none;
+	background-color: rgba( 205, 255, 241, 0.4 );
   }
 }
 .workeximg {

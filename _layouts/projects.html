@@ -11,10 +11,18 @@ layout: default
   <li class="workex">
     <img class="workeximg" src="{{ "/assets/arista.jpg" | relative_url }}" alt="Arista">
     <div class="workexinfo">
-	  <h2>CLI Configurable Mac Secuirty MKA MAC Address</h2>
-      <h1>June 2020 - August 2020</h1>
+	  <h2>CLI Configurable MAC Security MKA MAC Address</h2>
+      <h1>May 2020 - August 2020</h1>
       <p>
-        Add detail here.
+        <a href="https://en.wikipedia.org/wiki/IEEE_802.1AE">MAC Security</a> key agreements between peers
+		takes place by the exchange of packets using
+		<a href="https://www.vocal.com/secure-communication/eapol-extensible-authentication-protocol-over-lan/#:~:text=Extensible%20Authentication%20Protocol%20(EAP)%20over,on%20to%20access%20network%20resources.">Extensible Authentication Protocol over LAN (EAPoL)</a>
+		as a transport protocol. These packets
+		have a dedicated MAC address for them and hence, key agreements between peers that are multiple
+		hops ( other switches in between ) away can fail due to intermediate switches considering that
+		the packet is destined to them.
+		Worked on a <a>team of 2 to urgently provide the customer with a way to configure this MAC address</a>
+		which can be particular to peers that are multiple hops away.
       </p>
     </div>
   </li>
@@ -24,17 +32,25 @@ layout: default
 	  <h2>Layer 2 Protocol Forwarding</h2>
       <h1>February 2020 - May 2020</h1>
       <p>
-        Worked on providing a feature for arista switches that allows CLI configurations to decide what packets to forward and what to trap.
+		Normally, a switch traps L2 protocol ( LACP/LLDP/STP/MACSec ) frames to CPU.
+		However, certain use-cases may require these frames to be forwarded.
+		This feature provides a <a>mechanism to control the behavior of L2 protocol frames received on a port</a>.
+		This feature was already present for interfaces. Worked <a>single-handedly to increase granularity for this feature</a>,
+		as requested by many customers to provide the flexbility to use this feature at a sub-interface level
+		where control of forwarding can be provided for different VLANs on the same interface.
       </p>
     </div>
   </li>
   <li class="workex">
     <img class="workeximg" src="{{ "/assets/arista.jpg" | relative_url }}" alt="Arista">
     <div class="workexinfo">
-	  <h2>Tool Control Chat BOT for Google Hangouts Chat</h2>
+	  <h2>Chat BOT integrated with Google Hangouts Chat</h2>
       <h1>ImproveIT Hackathon - October 2019</h1>
       <p>
-        Made a chat bot integrated with GHC for the employess to use to run tests and other things when they are not close to their laptop.
+		Built a <a>chat bot</a> that allows control of development tools through the enterprise chat appliation provided by <a>Google ( GHC )</a>
+		as part of Arista's Biannual Hackathon. This bot provides the employees an interface to
+		<a>Run/Scheudule/View Test Results</a>, <a>Run/View Builds for projects</a>, etc. using GHC through their mobile,
+		when they are away from their office laptop and hence <a>save a lot of time</a>.
       </p>
     </div>
   </li>
