@@ -5,3 +5,4 @@ _site
 vendor
 _posts/2020-08-10-first-post.md
 .DS_Store
+updateData.py

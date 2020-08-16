@@ -99,16 +99,34 @@ layout: default
                 <div>Dead : <span class="tooltip-deaths">Loading...</span></div>
               </div>
             </span>
-			<p>
-			{% assign summary = site.data.casesSummary  %}
-			Updated: {{ summary.updated_at }}<br>
-			Total Tests: {{ summary.tested_total }}<br>
-			Total Positive: {{ summary.tested_positive }}<br>
-			Total Recovered: {{ summary.recovered }}<br>
-			Total Deaths: {{ summary.deaths }}<br>
-			Total Quarantined: {{ summary.quarantined}}<br>
-			Total Isolation: {{ summary.in_isolation }}<br>
-			</p>
+			<ul class="posts">
+		  		<li class="posts-labelgroup" id="posts-labelgroup">
+					<h1 id="posts-label">Summary</h1>
+		  		</li>
+				<p>
+				{% assign summary = site.data.casesSummary  %}
+				Updated: {{ summary.updated_at }}<br>
+				Total Tests: {{ summary.tested_total }}<br>
+				Total Positive: {{ summary.tested_positive }}<br>
+				Total Recovered: {{ summary.recovered }}<br>
+				Total Deaths: {{ summary.deaths }}<br>
+				Total Quarantined: {{ summary.quarantined}}<br>
+				Total Isolation: {{ summary.in_isolation }}<br>
+				</p>
+			</ul>
+			
+			<ul class="posts">
+		  		<li class="posts-labelgroup" id="posts-labelgroup">
+					<h1 id="posts-label">Dangerous Foreign Broders ( See location below )</h1>
+		  		</li>
+				<p>
+				</p>
+			</ul>
+
+			<ul class="posts">
+		  		<li class="posts-labelgroup" id="posts-labelgroup">
+					<h1 id="posts-label">Plot of cases by district ( Click to view count )</h1>
+		  		</li>
             <svg version="1.1" id="Layer_1" xmlns:x="&amp;ns_extend;" xmlns:i="&amp;ns_ai;"
               xmlns:graph="&amp;ns_graphs;" xmlns:cc="http://creativecommons.org/ns#"
               xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -903,6 +921,23 @@ layout: default
                 </g>
               </g>
             </svg>
+			</ul>
+			
+			<ul class="posts">
+		  		<li class="posts-labelgroup" id="posts-labelgroup">
+					<h1 id="posts-label">FAQs</h1>
+		  		</li>
+				<p>
+				</p>
+			</ul>
+
+			<ul class="posts">
+		  		<li class="posts-labelgroup" id="posts-labelgroup">
+					<h1 id="posts-label">Myths</h1>
+		  		</li>
+				<p>
+				</p>
+			</ul>
 
           </div>
         </div>
