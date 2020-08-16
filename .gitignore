@@ -4,3 +4,4 @@ _site
 .jekyll-metadata
 vendor
 _posts/2020-08-10-first-post.md
+.DS_Store
