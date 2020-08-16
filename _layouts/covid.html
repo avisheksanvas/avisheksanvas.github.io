@@ -1,14 +1,114 @@
 ---
 layout: default
 ---
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+<style>
+  svg {
+    text-align: center;
+  }
+
+  path {
+    stroke: #222;
+    stroke-width: .4 !important;
+  }
+
+  #bg {
+    display: none
+  }
+
+  path:hover {
+    opacity: .7;
+    cursor: pointer;
+  }
+
+  .maptext {
+    display: none;
+    font-family: Muli, Helvetica, sans-serif;
+    font-size: 8.5pt;
+    font-weight: bold;
+  }
+
+  #nepal-covid19 svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  tbody td:not(:first-child) {
+    text-align: right;
+  }
+
+  .tooltiptext {
+    position: absolute;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    z-index: 1;
+    transition: 0.4s ease all;
+    border-bottom: solid 2px black;
+    background: black;
+    padding: 0px 15px 10px;
+    color: #e6f2ff;
+  }
+
+  }
+</style>
 
 <body style="margin:0px"o
   <div class="" id="nepal-covid19" role="tabpanel" aria-labelledby="nepal-covid19-data">
-    <div style=" background-color:#222222; ">
+    <div>
       <div class="container container-map" style="background-color: transparent;">
         <div class="row">
           <div class="col-xs-12 col-md-7">
-
+			<script>
+              function districtClick(source) {
+                let id = $(source).attr("id").replace("district-", "");
+			  	{% for data in site.data.cases %}
+					if( {{ data.id }} == parseInt(id) ) {
+                		$(".tooltiptext").find('.tooltip-district').html('{{ data.title }}');
+                		$(".tooltiptext").find('.tooltip-total').html({{ data.cases }});
+                		$(".tooltiptext").find('.tooltip-active').html({{ data.cases_active }});
+                		$(".tooltiptext").find('.tooltip-deaths').html({{ data.cases_death }});
+                		$(".tooltiptext").find('.tooltip-recovered').html({{ data.cases_recovered }});
+                		$(".tooltiptext").show();
+                		$(".tooltiptext").position({ my: "left bottom", at: "left top", of: "#district-" + id });
+					}
+			  	{% endfor %}
+              }
+			  function districtHover(source) {
+                //districtClick(source);
+              }
+              function scrollToTargetAdjusted(element) {
+                var headerOffset = 100;
+                var elementPosition = element.getBoundingClientRect().top;
+                var offsetPosition = elementPosition - headerOffset;
+                window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+              }
+              function goToDistrict(code) {
+                scrollToTargetAdjusted(document.getElementById("district-" + code));
+              }
+			</script>
+			<span class="tooltiptext" style="display:none;">
+              <div style="position: relative; width:70px"><a href="javascript:;" onclick="$('.tooltiptext').hide();"
+                  class="close" style="display:none;"></a>
+                <h4 class="title--line__red tooltip-district" style="margin-top: 10px;font-size: 15px;">Loading...</h4>
+                <div>Infected:  <span class="tooltip-total">Loading...</span></div>
+                <div>Active : <span class="tooltip-active">Loading...</span></div>
+                <div>Recovered: <span class="tooltip-recovered">Loading...</span></div>
+                <div>Dead : <span class="tooltip-deaths">Loading...</span></div>
+              </div>
+            </span>
+			<p>
+			{% assign summary = site.data.casesSummary  %}
+			Updated: {{ summary.updated_at }}<br>
+			Total Tests: {{ summary.tested_total }}<br>
+			Total Positive: {{ summary.tested_positive }}<br>
+			Total Recovered: {{ summary.recovered }}<br>
+			Total Deaths: {{ summary.deaths }}<br>
+			Total Quarantined: {{ summary.quarantined}}<br>
+			Total Isolation: {{ summary.in_isolation }}<br>
+			</p>
             <svg version="1.1" id="Layer_1" xmlns:x="&amp;ns_extend;" xmlns:i="&amp;ns_ai;"
               xmlns:graph="&amp;ns_graphs;" xmlns:cc="http://creativecommons.org/ns#"
               xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -810,3 +910,34 @@ layout: default
     </div>
   </div>
 </body>
+
+<script>
+  function rgbToHex(r, g, b) {
+  	return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+  }
+  $(document).ready(function () {
+		let nBlocks = 30;
+		let colorDiff = 255/nBlocks;
+		let r = 255, g = 255, b = 255;
+		let maxCases = 0;
+		let leastCases = 2000000;
+		{% for data in site.data.cases %}
+			leastCases = Math.min( leastCases, {{ data.cases }} );
+			maxCases = Math.max( maxCases, {{ data.cases }} );
+		{% endfor %}
+		let diff = ( maxCases - leastCases ) / nBlocks;
+		let blocks = [];
+		for( i = 0 ; i < nBlocks ; i++ ) {
+			blocks[i] = leastCases + ( diff * i );
+		}
+		blocks[nBlocks] = maxCases;
+		{% for data in site.data.cases %}
+			for( i = 1 ; i <= nBlocks ; i++ ) {
+				if( {{ data.cases }} <= blocks[i] ) {
+      				$('#district-' + {{ data.id }}).css( {"fill":rgbToHex(r,g-(i*25),b-(i*25))})
+					break;
+				}
+			}
+		{% endfor %}
+  });
+</script>

@@ -51,8 +51,6 @@ plainwhite:
       url: "/blog"
     - title: Hobbies
       url: "/hobbies"
-    - title: Covid-Nepal
-      url: "/covid"
   social_links:
     twitter: avisheksanvas
     github: avisheksanvas
