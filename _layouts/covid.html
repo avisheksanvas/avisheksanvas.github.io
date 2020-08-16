@@ -928,6 +928,10 @@ layout: default
 					<h1 id="posts-label">FAQs</h1>
 		  		</li>
 				<p>
+				{% for faq in site.data.faqs %}
+					Question: {{ faq.question }} <br>
+					Answer: {{ faq.answer }} <br><br>
+				{% endfor %}
 				</p>
 			</ul>
 
@@ -936,6 +940,22 @@ layout: default
 					<h1 id="posts-label">Myths</h1>
 		  		</li>
 				<p>
+				{% for myth in site.data.myths %}
+					Myth: {{ myth.myth }} <br>
+					Reality: {{ myth.reality }} <br><br>
+				{% endfor %}
+				</p>
+			</ul>
+
+			<ul class="posts">
+		  		<li class="posts-labelgroup" id="posts-labelgroup">
+					<h1 id="posts-label">Source and Acknowledgements</h1>
+		  		</li>
+				<p>
+					Sourced from API by <a href="https://nepalcorona.info/">nepalcorona.info</a><br>
+					Inspired by this <a href="https://covid19.ndrrma.gov.np/">govt site</a><br>
+					For more detailed info visit this <a href="https://covidnepal.org/">open source project</a><br>
+					A huge thanks to the <a href="https://nepalcorona.info/about-us">Ask Bhunte Team</a> for the API
 				</p>
 			</ul>
 
