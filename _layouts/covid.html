@@ -117,26 +117,6 @@ layout: default
 			
 			<ul class="posts">
 		  		<li class="posts-labelgroup" id="posts-labelgroup">
-					<h1 id="posts-label">Dangerous Foreign Borders ( See location below )</h1>
-		  		</li>
-				<p>
-				</p>
-			</ul>
-
-			<ul class="posts">
-		  		<li class="posts-labelgroup" id="posts-labelgroup">
-					<h1 id="posts-label">Province-Wise cases</h1>
-		  		</li>
-				<p>
-				{% for data in site.data.casesProvince %}
-				Province: {{ data.province }}, Active Cases: {{ data.cases_active }},
-				Deaths: {{ data.cases_death }}<br><br>
-				{% endfor %}
-				</p>
-			</ul>
-
-			<ul class="posts">
-		  		<li class="posts-labelgroup" id="posts-labelgroup">
 					<h1 id="posts-label">Plot of cases by district ( Click to view count )</h1>
 		  		</li>
             <svg version="1.1" id="Layer_1" xmlns:x="&amp;ns_extend;" xmlns:i="&amp;ns_ai;"
@@ -935,6 +915,31 @@ layout: default
             </svg>
 			</ul>
 			
+			<ul class="posts">
+		  		<li class="posts-labelgroup" id="posts-labelgroup">
+					<h1 id="posts-label">Dangerous Foreign Borders ( See location above )</h1>
+		  		</li>
+				<p>
+				{% for data in site.data.casesBorder %}
+				Border: {{ data.border }}<br>
+				Active cases closest to it: {{ data.cases }}<br>
+				Coordinates: {{ data.coordinates[0] }}, {{ data.coordinates[1] }}<br><br>
+				{% endfor %}
+				</p>
+			</ul>
+
+			<ul class="posts">
+		  		<li class="posts-labelgroup" id="posts-labelgroup">
+					<h1 id="posts-label">Province-Wise cases</h1>
+		  		</li>
+				<p>
+				{% for data in site.data.casesProvince %}
+				Province: {{ data.province }}, Active Cases: {{ data.cases_active }},
+				Deaths: {{ data.cases_death }}<br><br>
+				{% endfor %}
+				</p>
+			</ul>
+
 			<ul class="posts">
 		  		<li class="posts-labelgroup" id="posts-labelgroup">
 					<h1 id="posts-label">FAQs about COVID</h1>
