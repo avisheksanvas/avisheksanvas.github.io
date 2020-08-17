@@ -125,6 +125,18 @@ layout: default
 
 			<ul class="posts">
 		  		<li class="posts-labelgroup" id="posts-labelgroup">
+					<h1 id="posts-label">Province-Wise cases</h1>
+		  		</li>
+				<p>
+				{% for data in site.data.casesProvince %}
+				Province: {{ data.province }}, Active Cases: {{ data.cases_active }},
+				Deaths: {{ data.cases_death }}<br><br>
+				{% endfor %}
+				</p>
+			</ul>
+
+			<ul class="posts">
+		  		<li class="posts-labelgroup" id="posts-labelgroup">
 					<h1 id="posts-label">Plot of cases by district ( Click to view count )</h1>
 		  		</li>
             <svg version="1.1" id="Layer_1" xmlns:x="&amp;ns_extend;" xmlns:i="&amp;ns_ai;"
